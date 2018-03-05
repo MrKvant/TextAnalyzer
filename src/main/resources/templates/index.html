@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Главная</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/custom.css" th:href="@{/css/custom.css}"/>
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/bootstrap.css"
+          th:href="@{/css/bootstrap.css}"/>
+    <script th:src="@{/js/bootstrap.js}"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script th:src="@{/js/custom.js}"></script>
+
+    <script type="text/javascript">
+
+    </script>
+
+</head>
+<body>
+
+<div class="container-fluid w-75" style="font-family: 'Adobe Garamond Pro';">
+    <div class="row" style="background-color: #d83f2d; height: 100px;border-radius: 10px">
+        <div class="col border-property">
+            <h1 align="center" style="color: #ffffff ;padding-top: 10px;">Анализатор текста</h1>
+        </div>
+    </div>
+    <div class="row" style="background-color: #916b64; height: 500px; border-radius: 10px">
+        <div class="col border-property" style="padding-top: 30px; border-right: 1px solid #C9C1D5">
+            <form id="inputForm" name="inputForm" enctype="multipart/form-data" method="post">
+
+                <div class="input-group">
+                    <label class="input-group-btn">
+                    <span class="btn btn-secondary">
+                        Выбрать файл&hellip; <input type="file" name="inputFile" style="display: none;"/>
+                    </span>
+                    </label>
+
+                    <input type="text" class="form-control" th:readonly="readonly"/>
+                </div>
+
+                <div class="form-check" style="padding-top: 20px;color: #ffffff">
+                    <input class="form-check-input" type="radio" name="radioGroup" id="radios1" value="words"
+                           th:checked="checked"/>
+                    <label class="form-check-label" for="radios1">
+                        Вывести топ-10 наиболее часто встречающихся слов
+                    </label>
+                </div>
+                <div class="form-check" style="padding-top: 20px; padding-bottom: 20px;color: #ffffff">
+                    <input class="form-check-input" type="radio" name="radioGroup" id="radios2" value="brackets"/>
+                    <label class="form-check-label" for="radios2">
+                        Проверка правильности расстановки скобок
+                    </label>
+                </div>
+
+
+                <input type="submit" class="btn btn-secondary" id="btnSubmit" value="Отправить"/>
+            </form>
+        </div>
+        <div class="col border-property" style="padding-top: 10px;">
+            <div class="card">
+                <h5 class="card-header">Результат</h5>
+                <div class="card-body" style=" height: 420px">
+                    <h5 class="card-title" id="cardResult"></h5>
+                    <ul class="list-group" id="listWords">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="background-color: #b2b2b0; height: 100px; border-radius: 10px">
+        <div class="col border-property" style="color: #ffffff; padding-top: 10px">
+            Разработал Казаченко Максим 2018
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
