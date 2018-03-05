@@ -1,5 +1,6 @@
 # TextAnalyzer
 Веб-приложение для анализа текста.
+![image](https://user-images.githubusercontent.com/4527850/36965042-75e9dc1e-2069-11e8-8b81-ab5a5834fd1b.png)
 
 ### Используемые технологии:
 ```Java```
